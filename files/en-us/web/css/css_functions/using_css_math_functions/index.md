@@ -8,7 +8,7 @@ page-type: guide
 
 **CSS math functions** allow a property value - such as the `height`, `animation-duration`, or `font-size` of an element - to be written as a mathematical expression.
 
-Without using any math, the built-in [CSS units](/en-US/docs/Learn/CSS/Building_blocks/Values_and_units) like `rem`, `vw`, and `%` are often flexible enough to style HTML elements to achieve a particular user experience.
+Without using any math, the built-in [CSS units](/en-US/docs/Learn_web_development/Core/Styling_basics/Values_and_units) like `rem`, `vw`, and `%` are often flexible enough to style HTML elements to achieve a particular user experience.
 
 However, there are cases where we might feel limited by expressing an element's style using a single value and unit. Consider the following examples:
 
@@ -264,7 +264,7 @@ Click on the play icon below to see the `clamp()` example in the code playground
   <code>width: clamp(10%, 9999px, 90%);</code>
 </div>
 <div class="clamp3">
-  <code>width: clamp(25px, 1px, 150px);</code>
+  <code>width: clamp(125px, 1px, 250px);</code>
 </div>
 <div class="clamp4">
   <code>width: clamp(25px, 9999px, 150px);</code>

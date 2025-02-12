@@ -30,7 +30,7 @@ Lazy loading can be applied to multiple resources and through multiple strategie
 JavaScript, CSS and HTML can be split into smaller chunks. This enables sending the minimal code required to provide value upfront, improving page-load times. The rest can be loaded on demand.
 
 - Entry point splitting: separates code by entry point(s) in the app
-- Dynamic splitting: separates code where [dynamic import()](/en-US/docs/Web/JavaScript/Reference/Statements/import) statements are used
+- Dynamic splitting: separates code where [dynamic import()](/en-US/docs/Web/JavaScript/Reference/Operators/import) expressions are used
 
 ### JavaScript
 
@@ -48,13 +48,13 @@ By default, CSS is treated as a [render blocking](/en-US/docs/Web/Performance/Cr
 <link href="print.css" rel="stylesheet" media="print" />
 ```
 
-It is possible to perform some [CSS optimizations](/en-US/docs/Learn/Performance/CSS) to achieve that.
+It is possible to perform some [CSS optimizations](/en-US/docs/Learn_web_development/Extensions/Performance/CSS) to achieve that.
 
 ### Fonts
 
 By default, font requests are delayed until the render tree is constructed, which can result in delayed text rendering.
 
-It is possible to override the default behavior and preload web font resources using `<link rel="preload">`, the [CSS font-display property](/en-US/docs/Web/CSS/@font-face/font-display), and the [Font Loading API](/en-US/docs/Web/API/CSS_Font_Loading_API).
+It is possible to override the default behavior and preload web font resources using `<link rel="preload">`, the [CSS `font-display` descriptor](/en-US/docs/Web/CSS/@font-face/font-display), and the [Font Loading API](/en-US/docs/Web/API/CSS_Font_Loading_API).
 
 See also: [Element Link](/en-US/docs/Web/HTML/Element/link).
 
@@ -68,8 +68,8 @@ The [`loading`](/en-US/docs/Web/HTML/Element/img#loading) attribute on an {{HTML
 This allows non-critical resources to load only if needed, potentially speeding up initial page loads and reducing network usage.
 
 ```html
-<img src="image.jpg" alt="..." loading="lazy" />
-<iframe src="video-player.html" title="..." loading="lazy"></iframe>
+<img loading="lazy" src="image.jpg" alt="..." />
+<iframe loading="lazy" src="video-player.html" title="..."></iframe>
 ```
 
 The `load` event fires when the eagerly-loaded content has all been loaded. At that time, it's entirely possible (or even likely) that there may be lazily-loaded images or iframes within the {{Glossary("visual viewport")}} that haven't yet loaded.
@@ -94,4 +94,4 @@ When browser compatibility is crucial, there are a few options:
 ## See also
 
 - [Render blocking CSS](https://web.dev/articles/critical-rendering-path/render-blocking-css)
-- [Use lazy loading to improve loading speed](https://web.dev/articles/lazy-loading)
+- [Browser-level image lazy loading for the web](https://web.dev/articles/browser-level-image-lazy-loading)

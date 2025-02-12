@@ -3,6 +3,8 @@ title: "Window: originAgentCluster property"
 short-title: originAgentCluster
 slug: Web/API/Window/originAgentCluster
 page-type: web-api-instance-property
+status:
+  - experimental
 browser-compat: api.Window.originAgentCluster
 ---
 
@@ -15,8 +17,10 @@ Otherwise this property returns `false`.
 Windows that are part of an origin-keyed agent cluster are subjects to some additional restrictions, compared with windows that are not. In particular, they cannot:
 
 - Set {{domxref("Document.domain")}}, which is a legacy feature that normally allows same-site cross-origin pages to synchronously access each other's DOM.
-- Send [`WebAssembly.Module`](/en-US/docs/WebAssembly/JavaScript_interface/Module) objects to other same-site cross-origin pages via {{domxref("Window.postMessage()")}}.
-- Send {{jsxref("SharedArrayBuffer")}} or [`WebAssembly.Memory`](/en-US/docs/WebAssembly/JavaScript_interface/Memory) objects to other same-site cross-origin pages.
+- Send [`WebAssembly.Module`](/en-US/docs/WebAssembly/Reference/JavaScript_interface/Module) objects to other same-site cross-origin pages via {{domxref("Window.postMessage()")}}.
+- Send {{jsxref("SharedArrayBuffer")}} or [`WebAssembly.Memory`](/en-US/docs/WebAssembly/Reference/JavaScript_interface/Memory) objects to other same-site cross-origin pages.
+
+To request that the browser assign this window to an origin-keyed agent cluster, the server must send the {{httpheader("Origin-Agent-Cluster")}} response header.
 
 Note that the origin-keyed agent cluster feature is only supported in {{glossary("Secure Context", "secure contexts")}}. If a site is not a secure context, the `window.originAgentCluster` will always return `false`.
 
@@ -30,4 +34,5 @@ Note that the origin-keyed agent cluster feature is only supported in {{glossary
 
 ## See also
 
+- {{httpheader("Origin-Agent-Cluster")}} HTTP response header
 - [Requesting performance isolation with the Origin-Agent-Cluster header](https://web.dev/articles/origin-agent-cluster)

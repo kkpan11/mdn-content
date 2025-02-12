@@ -11,7 +11,27 @@ The **`async function*`** keywords can be used to define an async generator func
 
 You can also define async generator functions using the [`async function*` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function*).
 
-{{EmbedInteractiveExample("pages/js/expressions-async-function-asterisk.html", "taller")}}
+{{InteractiveExample("JavaScript Demo: Expressions - Async Function Asterisk", "taller")}}
+
+```js interactive-example
+async function* foo() {
+  yield await Promise.resolve("a");
+  yield await Promise.resolve("b");
+  yield await Promise.resolve("c");
+}
+
+let str = "";
+
+async function generate() {
+  for await (const val of foo()) {
+    str = str + val;
+  }
+  console.log(str);
+}
+
+generate();
+// Expected output: "abc"
+```
 
 ## Syntax
 
@@ -37,7 +57,8 @@ async function* name(param0, param1, /* …, */ paramN) {
 }
 ```
 
-> **Note:** An [expression statement](/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement) cannot begin with the keywords `async function` to avoid ambiguity with an [`async function*` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function*). The `async function` keywords only begin an expression when they appear in a context that cannot accept statements.
+> [!NOTE]
+> An [expression statement](/en-US/docs/Web/JavaScript/Reference/Statements/Expression_statement) cannot begin with the keywords `async function` to avoid ambiguity with an [`async function*` declaration](/en-US/docs/Web/JavaScript/Reference/Statements/async_function*). The `async function` keywords only begin an expression when they appear in a context that cannot accept statements.
 
 ### Parameters
 

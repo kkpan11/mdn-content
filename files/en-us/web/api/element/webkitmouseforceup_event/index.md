@@ -8,7 +8,7 @@ status:
 browser-compat: api.Element.webkitmouseforceup_event
 ---
 
-{{APIRef}}{{Non-standard_header}}
+{{APIRef("Force Touch Events")}}{{Non-standard_header}}
 
 The non-standard **`webkitmouseforceup`** event is fired by Safari at an {{domxref("Element")}} some time after the {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}} event, when pressure on the button has been reduced sufficiently to end the "force click".
 
@@ -26,7 +26,7 @@ onwebkitmouseforceup = (event) => {};
 
 ## Event type
 
-A {{domxref("MouseEvent")}}. Inherits from {{domxref("Event")}}.
+A {{domxref("MouseEvent")}}. Inherits from {{domxref("UIEvent")}} and {{domxref("Event")}}.
 
 {{InheritanceDiagram("MouseEvent")}}
 
@@ -92,8 +92,7 @@ _Not part of any specification._ Apple has [a description at the Mac Developer L
 
 ## See also
 
-- [Introduction to events](/en-US/docs/Learn/JavaScript/Building_blocks/Events)
-- [Force Touch events](/en-US/docs/Web/API/Force_Touch_events)
+- [Learn: Introduction to events](/en-US/docs/Learn_web_development/Core/Scripting/Events)
 - {{domxref("Element/webkitmouseforcewillbegin_event", "webkitmouseforcewillbegin")}}
 - {{domxref("Element/webkitmouseforcedown_event", "webkitmouseforcedown")}}
 - {{domxref("Element/webkitmouseforcechanged_event", "webkitmouseforcechanged")}}

@@ -1,5 +1,5 @@
 ---
-title: ":popover-open"
+title: :popover-open
 slug: Web/CSS/:popover-open
 page-type: css-pseudo-class
 browser-compat: css.selectors.popover-open
@@ -61,3 +61,4 @@ To override the default styles and get the popover to appear somewhere else on y
 ## See also
 
 - [Popover API](/en-US/docs/Web/API/Popover_API)
+- [`popover`](/en-US/docs/Web/HTML/Global_attributes/popover) HTML global attribute
